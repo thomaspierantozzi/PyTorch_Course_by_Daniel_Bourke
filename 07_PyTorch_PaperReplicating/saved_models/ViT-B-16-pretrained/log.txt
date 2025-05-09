@@ -1,0 +1,6 @@
+[2025-05-08 15:46:49 ]
+The folders already exist: 
+	/Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/07_PyTorch_PaperReplicating/Datasets/train
+	/Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/07_PyTorch_PaperReplicating/Datasets/test
+	Foods in the train and test folders: 
+		['filet_mignon', 'falafel', 'beef_tartare', 'miso_soup', 'prime_rib']

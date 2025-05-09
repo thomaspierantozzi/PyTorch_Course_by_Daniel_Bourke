@@ -1,0 +1,714 @@
+[2025-03-27 23:16:14 ]
+The Food101 dataset already exists @ /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/food-101
+[2025-03-27 23:16:14 ]
+Creating dataset train and test folders:
+[2025-03-27 23:16:14 ]
+The folders have been created:
+	/Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train
+	/Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test
+[2025-03-27 23:16:14 ]
+The food101 folder exist...
+[2025-03-27 23:16:14 ]
+The picked food are: ['miso_soup', 'crab_cakes', 'deviled_eggs', 'apple_pie', 'beef_carpaccio']
+[2025-03-27 23:16:14 ]
+The picked food miso_soup has 1000 samples.
+[2025-03-27 23:16:14 ]
+Copied 800 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train/miso_soup
+[2025-03-27 23:16:14 ]
+Copied 200 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test/miso_soup
+[2025-03-27 23:16:14 ]
+The picked food crab_cakes has 1000 samples.
+[2025-03-27 23:16:14 ]
+Copied 800 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train/crab_cakes
+[2025-03-27 23:16:14 ]
+Copied 200 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test/crab_cakes
+[2025-03-27 23:16:14 ]
+The picked food deviled_eggs has 1000 samples.
+[2025-03-27 23:16:14 ]
+Copied 800 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train/deviled_eggs
+[2025-03-27 23:16:15 ]
+Copied 200 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test/deviled_eggs
+[2025-03-27 23:16:15 ]
+The picked food apple_pie has 1000 samples.
+[2025-03-27 23:16:15 ]
+Copied 800 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train/apple_pie
+[2025-03-27 23:16:15 ]
+Copied 200 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test/apple_pie
+[2025-03-27 23:16:15 ]
+The picked food beef_carpaccio has 1000 samples.
+[2025-03-27 23:16:15 ]
+Copied 800 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/train/beef_carpaccio
+[2025-03-27 23:16:15 ]
+Copied 200 files to /Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/05_PyTorch_Food101/Datasets/test/beef_carpaccio
+[2025-03-27 23:16:16 ]
+The datasets have been created...
+	The train dataset has 4_000 images
+	The test dataset has 1_000 images
+[2025-03-27 23:16:16 ]
+The classes of the datasets are mapped like so: 
+	{'apple_pie': 0, 'beef_carpaccio': 1, 'crab_cakes': 2, 'deviled_eggs': 3, 'miso_soup': 4}
+[2025-03-27 23:16:16 ]
+The dataloaders are on, with batch size 32
+[2025-03-27 23:16:16 ]
+Number of batches (training): 125
+[2025-03-27 23:16:16 ]
+Using mps device
+[2025-03-27 23:16:16 ]
+The model is created and loaded on: mps:0
+[2025-03-27 23:16:28 ]
+The outcome of the tast performed on the first picture fetched from the dataloader is: 
+	LOGITS: tensor([[-0.0121,  0.0528,  0.0310, -0.0183,  0.0217]], device='mps:0')
+	PROBABILITIES: tensor([[0.1946, 0.2076, 0.2031, 0.1934, 0.2013]], device='mps:0')
+	PREDICTED CLASS: 1
+[2025-03-27 23:16:29 ]
+The Learning Rate is set to 0.005 | Optimizer is on and ready...
+[2025-03-27 23:16:34 ]
+EPOCH NUMBER: 1 out of 50
+[2025-03-27 23:16:34 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.617 (last:    1.617) | Train Acc. epoch: 18.75% (last: 18.75%) | Elapsed Time: 0.1 sec.
+[2025-03-27 23:16:38 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.604 (last:    1.578) | Train Acc. epoch: 21.94% (last: 34.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:16:42 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.594 (last:    1.580) | Train Acc. epoch: 25.03% (last: 31.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:16:45 ]
+Epoch number: 1 out of 50
+	Train loss: 1.587 | Train Accuracy: 25.825%
+	CV loss:    1.549 | CV Accuracy:    27.441%
+	Time taken: 11.20 seconds
+[2025-03-27 23:16:46 ]
+EPOCH NUMBER: 2 out of 50
+[2025-03-27 23:16:46 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.560 (last:    1.560) | Train Acc. epoch: 40.62% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:16:49 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.552 (last:    1.492) | Train Acc. epoch: 31.37% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:16:53 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.540 (last:    1.514) | Train Acc. epoch: 31.59% (last: 31.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:16:57 ]
+Epoch number: 2 out of 50
+	Train loss: 1.534 | Train Accuracy: 32.075%
+	CV loss:    1.476 | CV Accuracy:    36.328%
+	Time taken: 10.97 seconds
+[2025-03-27 23:16:57 ]
+EPOCH NUMBER: 3 out of 50
+[2025-03-27 23:16:57 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.490 (last:    1.490) | Train Acc. epoch: 25.00% (last: 25.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:01 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.495 (last:    1.427) | Train Acc. epoch: 35.23% (last: 37.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:04 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.490 (last:    1.645) | Train Acc. epoch: 35.67% (last: 18.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:08 ]
+Epoch number: 3 out of 50
+	Train loss: 1.483 | Train Accuracy: 35.875%
+	CV loss:    1.430 | CV Accuracy:    38.672%
+	Time taken: 11.01 seconds
+[2025-03-27 23:17:08 ]
+EPOCH NUMBER: 4 out of 50
+[2025-03-27 23:17:08 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.441 (last:    1.441) | Train Acc. epoch: 37.50% (last: 37.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:12 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.462 (last:    1.521) | Train Acc. epoch: 36.64% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:16 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.454 (last:    1.447) | Train Acc. epoch: 37.19% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:19 ]
+Epoch number: 4 out of 50
+	Train loss: 1.451 | Train Accuracy: 37.775%
+	CV loss:    1.390 | CV Accuracy:    42.090%
+	Time taken: 11.13 seconds
+[2025-03-27 23:17:19 ]
+EPOCH NUMBER: 5 out of 50
+[2025-03-27 23:17:19 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.388 (last:    1.388) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:23 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.433 (last:    1.481) | Train Acc. epoch: 39.64% (last: 34.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:27 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.426 (last:    1.543) | Train Acc. epoch: 39.88% (last: 25.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:31 ]
+Epoch number: 5 out of 50
+	Train loss: 1.422 | Train Accuracy: 40.050%
+	CV loss:    1.340 | CV Accuracy:    45.801%
+	Time taken: 11.31 seconds
+[2025-03-27 23:17:31 ]
+EPOCH NUMBER: 6 out of 50
+[2025-03-27 23:17:31 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.329 (last:    1.329) | Train Acc. epoch: 43.75% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:35 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.382 (last:    1.295) | Train Acc. epoch: 41.91% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:39 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.385 (last:    1.389) | Train Acc. epoch: 41.83% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:42 ]
+Epoch number: 6 out of 50
+	Train loss: 1.387 | Train Accuracy: 41.625%
+	CV loss:    1.315 | CV Accuracy:    45.410%
+	Time taken: 11.45 seconds
+[2025-03-27 23:17:42 ]
+EPOCH NUMBER: 7 out of 50
+[2025-03-27 23:17:42 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.227 (last:    1.227) | Train Acc. epoch: 62.50% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:46 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.363 (last:    1.370) | Train Acc. epoch: 43.93% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:50 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.364 (last:    1.297) | Train Acc. epoch: 43.84% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:53 ]
+Epoch number: 7 out of 50
+	Train loss: 1.362 | Train Accuracy: 43.650%
+	CV loss:    1.279 | CV Accuracy:    48.340%
+	Time taken: 11.06 seconds
+[2025-03-27 23:17:54 ]
+EPOCH NUMBER: 8 out of 50
+[2025-03-27 23:17:54 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.334 (last:    1.334) | Train Acc. epoch: 50.00% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:17:57 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.358 (last:    1.219) | Train Acc. epoch: 44.00% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:01 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.335 (last:    1.086) | Train Acc. epoch: 44.28% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:05 ]
+Epoch number: 8 out of 50
+	Train loss: 1.333 | Train Accuracy: 44.600%
+	CV loss:    1.263 | CV Accuracy:    48.633%
+	Time taken: 11.03 seconds
+[2025-03-27 23:18:05 ]
+EPOCH NUMBER: 9 out of 50
+[2025-03-27 23:18:05 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.253 (last:    1.253) | Train Acc. epoch: 43.75% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:09 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.328 (last:    1.052) | Train Acc. epoch: 45.04% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:12 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.329 (last:    1.278) | Train Acc. epoch: 44.34% (last: 37.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:16 ]
+Epoch number: 9 out of 50
+	Train loss: 1.325 | Train Accuracy: 44.750%
+	CV loss:    1.254 | CV Accuracy:    49.023%
+	Time taken: 11.09 seconds
+[2025-03-27 23:18:16 ]
+EPOCH NUMBER: 10 out of 50
+[2025-03-27 23:18:16 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.381 (last:    1.381) | Train Acc. epoch: 43.75% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:20 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.291 (last:    1.320) | Train Acc. epoch: 45.77% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:24 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.305 (last:    1.287) | Train Acc. epoch: 44.80% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:27 ]
+Epoch number: 10 out of 50
+	Train loss: 1.311 | Train Accuracy: 44.875%
+	CV loss:    1.221 | CV Accuracy:    49.805%
+	Time taken: 11.04 seconds
+[2025-03-27 23:18:27 ]
+EPOCH NUMBER: 11 out of 50
+[2025-03-27 23:18:27 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.218 (last:    1.218) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:31 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.288 (last:    1.197) | Train Acc. epoch: 46.51% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:35 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.279 (last:    1.374) | Train Acc. epoch: 46.81% (last: 34.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:38 ]
+Epoch number: 11 out of 50
+	Train loss: 1.285 | Train Accuracy: 46.750%
+	CV loss:    1.216 | CV Accuracy:    49.902%
+	Time taken: 11.05 seconds
+[2025-03-27 23:18:39 ]
+EPOCH NUMBER: 12 out of 50
+[2025-03-27 23:18:39 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.214 (last:    1.214) | Train Acc. epoch: 53.12% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:42 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.275 (last:    1.111) | Train Acc. epoch: 47.18% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:46 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.276 (last:    1.080) | Train Acc. epoch: 47.40% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:50 ]
+Epoch number: 12 out of 50
+	Train loss: 1.276 | Train Accuracy: 47.900%
+	CV loss:    1.190 | CV Accuracy:    52.246%
+	Time taken: 11.07 seconds
+[2025-03-27 23:18:50 ]
+EPOCH NUMBER: 13 out of 50
+[2025-03-27 23:18:50 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.216 (last:    1.216) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:54 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.276 (last:    1.148) | Train Acc. epoch: 47.43% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:18:57 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.266 (last:    1.152) | Train Acc. epoch: 48.48% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:01 ]
+Epoch number: 13 out of 50
+	Train loss: 1.268 | Train Accuracy: 48.400%
+	CV loss:    1.180 | CV Accuracy:    54.297%
+	Time taken: 11.16 seconds
+[2025-03-27 23:19:01 ]
+EPOCH NUMBER: 14 out of 50
+[2025-03-27 23:19:01 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.418 (last:    1.418) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:05 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.245 (last:    1.176) | Train Acc. epoch: 48.65% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:09 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.231 (last:    1.110) | Train Acc. epoch: 50.00% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:12 ]
+Epoch number: 14 out of 50
+	Train loss: 1.238 | Train Accuracy: 49.325%
+	CV loss:    1.155 | CV Accuracy:    53.906%
+	Time taken: 11.20 seconds
+[2025-03-27 23:19:13 ]
+EPOCH NUMBER: 15 out of 50
+[2025-03-27 23:19:13 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.259 (last:    1.259) | Train Acc. epoch: 43.75% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:16 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.219 (last:    1.125) | Train Acc. epoch: 50.31% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:20 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.255 (last:    1.220) | Train Acc. epoch: 48.86% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:24 ]
+Epoch number: 15 out of 50
+	Train loss: 1.246 | Train Accuracy: 49.225%
+	CV loss:    1.160 | CV Accuracy:    53.906%
+	Time taken: 11.13 seconds
+[2025-03-27 23:19:24 ]
+EPOCH NUMBER: 16 out of 50
+[2025-03-27 23:19:24 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.110 (last:    1.110) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:28 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.219 (last:    1.143) | Train Acc. epoch: 51.72% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:32 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.233 (last:    1.535) | Train Acc. epoch: 51.39% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:35 ]
+Epoch number: 16 out of 50
+	Train loss: 1.237 | Train Accuracy: 51.250%
+	CV loss:    1.177 | CV Accuracy:    54.199%
+	Time taken: 11.16 seconds
+[2025-03-27 23:19:35 ]
+EPOCH NUMBER: 17 out of 50
+[2025-03-27 23:19:35 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.306 (last:    1.306) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:39 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.245 (last:    1.237) | Train Acc. epoch: 49.82% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:43 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.217 (last:    1.096) | Train Acc. epoch: 51.58% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:46 ]
+Epoch number: 17 out of 50
+	Train loss: 1.219 | Train Accuracy: 51.250%
+	CV loss:    1.163 | CV Accuracy:    52.539%
+	Time taken: 11.07 seconds
+[2025-03-27 23:19:46 ]
+EPOCH NUMBER: 18 out of 50
+[2025-03-27 23:19:46 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.171 (last:    1.171) | Train Acc. epoch: 50.00% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:50 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.219 (last:    1.120) | Train Acc. epoch: 49.94% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:54 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.211 (last:    1.067) | Train Acc. epoch: 50.25% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:19:58 ]
+Epoch number: 18 out of 50
+	Train loss: 1.212 | Train Accuracy: 50.775%
+	CV loss:    1.139 | CV Accuracy:    54.297%
+	Time taken: 11.21 seconds
+[2025-03-27 23:19:58 ]
+EPOCH NUMBER: 19 out of 50
+[2025-03-27 23:19:58 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.220 (last:    1.220) | Train Acc. epoch: 53.12% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:02 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.188 (last:    1.284) | Train Acc. epoch: 54.11% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:05 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.200 (last:    1.038) | Train Acc. epoch: 53.28% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:09 ]
+Epoch number: 19 out of 50
+	Train loss: 1.192 | Train Accuracy: 53.225%
+	CV loss:    1.183 | CV Accuracy:    51.074%
+	Time taken: 11.16 seconds
+[2025-03-27 23:20:09 ]
+EPOCH NUMBER: 20 out of 50
+[2025-03-27 23:20:09 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.348 (last:    1.348) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:13 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.183 (last:    1.246) | Train Acc. epoch: 51.78% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:17 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.194 (last:    1.119) | Train Acc. epoch: 51.55% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:20 ]
+Epoch number: 20 out of 50
+	Train loss: 1.193 | Train Accuracy: 52.075%
+	CV loss:    1.148 | CV Accuracy:    52.344%
+	Time taken: 11.03 seconds
+[2025-03-27 23:20:20 ]
+EPOCH NUMBER: 21 out of 50
+[2025-03-27 23:20:20 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.212 (last:    1.212) | Train Acc. epoch: 46.88% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:24 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.148 (last:    1.044) | Train Acc. epoch: 54.53% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:28 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.165 (last:    1.376) | Train Acc. epoch: 53.77% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:31 ]
+Epoch number: 21 out of 50
+	Train loss: 1.164 | Train Accuracy: 53.550%
+	CV loss:    1.123 | CV Accuracy:    55.566%
+	Time taken: 11.17 seconds
+[2025-03-27 23:20:32 ]
+EPOCH NUMBER: 22 out of 50
+[2025-03-27 23:20:32 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.019 (last:    1.019) | Train Acc. epoch: 56.25% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:36 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.127 (last:    1.062) | Train Acc. epoch: 56.37% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:39 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.149 (last:    1.159) | Train Acc. epoch: 54.58% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:43 ]
+Epoch number: 22 out of 50
+	Train loss: 1.160 | Train Accuracy: 53.825%
+	CV loss:    1.133 | CV Accuracy:    55.469%
+	Time taken: 11.16 seconds
+[2025-03-27 23:20:43 ]
+EPOCH NUMBER: 23 out of 50
+[2025-03-27 23:20:43 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.995 (last:    0.995) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:47 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.154 (last:    1.244) | Train Acc. epoch: 54.17% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:51 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.153 (last:    1.186) | Train Acc. epoch: 55.26% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:54 ]
+Epoch number: 23 out of 50
+	Train loss: 1.160 | Train Accuracy: 54.775%
+	CV loss:    1.126 | CV Accuracy:    53.906%
+	Time taken: 10.98 seconds
+[2025-03-27 23:20:54 ]
+EPOCH NUMBER: 24 out of 50
+[2025-03-27 23:20:54 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.281 (last:    1.281) | Train Acc. epoch: 43.75% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:20:58 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.199 (last:    1.223) | Train Acc. epoch: 52.76% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:02 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.164 (last:    1.111) | Train Acc. epoch: 54.02% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:05 ]
+Epoch number: 24 out of 50
+	Train loss: 1.160 | Train Accuracy: 54.350%
+	CV loss:    1.147 | CV Accuracy:    53.125%
+	Time taken: 11.03 seconds
+[2025-03-27 23:21:05 ]
+EPOCH NUMBER: 25 out of 50
+[2025-03-27 23:21:05 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.013 (last:    1.013) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:10 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.140 (last:    1.230) | Train Acc. epoch: 55.33% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:15 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.152 (last:    1.202) | Train Acc. epoch: 53.96% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:19 ]
+Epoch number: 25 out of 50
+	Train loss: 1.139 | Train Accuracy: 54.725%
+	CV loss:    1.120 | CV Accuracy:    53.906%
+	Time taken: 13.23 seconds
+[2025-03-27 23:21:19 ]
+EPOCH NUMBER: 26 out of 50
+[2025-03-27 23:21:19 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.073 (last:    1.073) | Train Acc. epoch: 50.00% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:23 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.168 (last:    1.248) | Train Acc. epoch: 53.00% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:27 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.149 (last:    0.922) | Train Acc. epoch: 53.68% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:30 ]
+Epoch number: 26 out of 50
+	Train loss: 1.140 | Train Accuracy: 54.075%
+	CV loss:    1.112 | CV Accuracy:    55.957%
+	Time taken: 11.47 seconds
+[2025-03-27 23:21:30 ]
+EPOCH NUMBER: 27 out of 50
+[2025-03-27 23:21:30 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.170 (last:    1.170) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:34 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.095 (last:    1.393) | Train Acc. epoch: 57.23% (last: 40.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:38 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.118 (last:    1.063) | Train Acc. epoch: 55.88% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:42 ]
+Epoch number: 27 out of 50
+	Train loss: 1.118 | Train Accuracy: 56.100%
+	CV loss:    1.116 | CV Accuracy:    56.543%
+	Time taken: 11.32 seconds
+[2025-03-27 23:21:42 ]
+EPOCH NUMBER: 28 out of 50
+[2025-03-27 23:21:42 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.053 (last:    1.053) | Train Acc. epoch: 53.12% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:46 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.102 (last:    1.042) | Train Acc. epoch: 56.50% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:50 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.106 (last:    1.182) | Train Acc. epoch: 56.13% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:53 ]
+Epoch number: 28 out of 50
+	Train loss: 1.119 | Train Accuracy: 55.625%
+	CV loss:    1.101 | CV Accuracy:    55.957%
+	Time taken: 11.33 seconds
+[2025-03-27 23:21:53 ]
+EPOCH NUMBER: 29 out of 50
+[2025-03-27 23:21:53 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.994 (last:    0.994) | Train Acc. epoch: 62.50% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:21:57 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.106 (last:    1.104) | Train Acc. epoch: 56.86% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:01 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.092 (last:    0.994) | Train Acc. epoch: 57.18% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:05 ]
+Epoch number: 29 out of 50
+	Train loss: 1.104 | Train Accuracy: 56.675%
+	CV loss:    1.133 | CV Accuracy:    53.906%
+	Time taken: 11.35 seconds
+[2025-03-27 23:22:05 ]
+EPOCH NUMBER: 30 out of 50
+[2025-03-27 23:22:05 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.780 (last:    0.780) | Train Acc. epoch: 68.75% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:09 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.100 (last:    1.081) | Train Acc. epoch: 57.78% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:13 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.104 (last:    1.020) | Train Acc. epoch: 56.56% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:16 ]
+Epoch number: 30 out of 50
+	Train loss: 1.097 | Train Accuracy: 56.750%
+	CV loss:    1.132 | CV Accuracy:    54.883%
+	Time taken: 11.40 seconds
+[2025-03-27 23:22:16 ]
+EPOCH NUMBER: 31 out of 50
+[2025-03-27 23:22:16 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.900 (last:    0.900) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:20 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.056 (last:    1.051) | Train Acc. epoch: 58.52% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:24 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.073 (last:    0.965) | Train Acc. epoch: 58.73% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:28 ]
+Epoch number: 31 out of 50
+	Train loss: 1.067 | Train Accuracy: 58.575%
+	CV loss:    1.126 | CV Accuracy:    54.688%
+	Time taken: 11.34 seconds
+[2025-03-27 23:22:28 ]
+EPOCH NUMBER: 32 out of 50
+[2025-03-27 23:22:28 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.085 (last:    1.085) | Train Acc. epoch: 53.12% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:32 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.083 (last:    1.006) | Train Acc. epoch: 56.92% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:36 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.067 (last:    0.805) | Train Acc. epoch: 58.38% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:39 ]
+Epoch number: 32 out of 50
+	Train loss: 1.070 | Train Accuracy: 58.175%
+	CV loss:    1.134 | CV Accuracy:    55.078%
+	Time taken: 11.39 seconds
+[2025-03-27 23:22:39 ]
+EPOCH NUMBER: 33 out of 50
+[2025-03-27 23:22:39 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.969 (last:    0.969) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:43 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.057 (last:    1.027) | Train Acc. epoch: 59.19% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:47 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.060 (last:    1.119) | Train Acc. epoch: 59.53% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:51 ]
+Epoch number: 33 out of 50
+	Train loss: 1.049 | Train Accuracy: 60.225%
+	CV loss:    1.097 | CV Accuracy:    56.445%
+	Time taken: 11.39 seconds
+[2025-03-27 23:22:51 ]
+EPOCH NUMBER: 34 out of 50
+[2025-03-27 23:22:51 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.987 (last:    0.987) | Train Acc. epoch: 65.62% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:55 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.073 (last:    0.772) | Train Acc. epoch: 58.21% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:22:59 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.060 (last:    1.204) | Train Acc. epoch: 58.94% (last: 46.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:02 ]
+Epoch number: 34 out of 50
+	Train loss: 1.054 | Train Accuracy: 59.000%
+	CV loss:    1.111 | CV Accuracy:    56.250%
+	Time taken: 11.29 seconds
+[2025-03-27 23:23:02 ]
+EPOCH NUMBER: 35 out of 50
+[2025-03-27 23:23:02 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.891 (last:    0.891) | Train Acc. epoch: 68.75% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:06 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.034 (last:    1.106) | Train Acc. epoch: 60.60% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:10 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.041 (last:    1.028) | Train Acc. epoch: 59.72% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:14 ]
+Epoch number: 35 out of 50
+	Train loss: 1.023 | Train Accuracy: 60.500%
+	CV loss:    1.140 | CV Accuracy:    54.590%
+	Time taken: 11.29 seconds
+[2025-03-27 23:23:14 ]
+EPOCH NUMBER: 36 out of 50
+[2025-03-27 23:23:14 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.941 (last:    0.941) | Train Acc. epoch: 62.50% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:18 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.010 (last:    1.238) | Train Acc. epoch: 61.89% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:22 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.017 (last:    0.980) | Train Acc. epoch: 61.01% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:25 ]
+Epoch number: 36 out of 50
+	Train loss: 1.020 | Train Accuracy: 61.200%
+	CV loss:    1.093 | CV Accuracy:    56.836%
+	Time taken: 11.32 seconds
+[2025-03-27 23:23:25 ]
+EPOCH NUMBER: 37 out of 50
+[2025-03-27 23:23:26 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.770 (last:    0.770) | Train Acc. epoch: 78.12% (last: 78.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:29 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.996 (last:    1.232) | Train Acc. epoch: 62.19% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:33 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.004 (last:    0.993) | Train Acc. epoch: 61.91% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:37 ]
+Epoch number: 37 out of 50
+	Train loss: 1.003 | Train Accuracy: 62.050%
+	CV loss:    1.102 | CV Accuracy:    55.762%
+	Time taken: 11.31 seconds
+[2025-03-27 23:23:37 ]
+EPOCH NUMBER: 38 out of 50
+[2025-03-27 23:23:37 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.801 (last:    0.801) | Train Acc. epoch: 68.75% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:41 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    1.004 (last:    0.948) | Train Acc. epoch: 61.21% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:45 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    1.008 (last:    1.090) | Train Acc. epoch: 61.23% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:48 ]
+Epoch number: 38 out of 50
+	Train loss: 1.017 | Train Accuracy: 60.750%
+	CV loss:    1.109 | CV Accuracy:    56.152%
+	Time taken: 11.26 seconds
+[2025-03-27 23:23:48 ]
+EPOCH NUMBER: 39 out of 50
+[2025-03-27 23:23:48 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.875 (last:    0.875) | Train Acc. epoch: 71.88% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:52 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.990 (last:    1.270) | Train Acc. epoch: 63.97% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:23:56 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.995 (last:    0.712) | Train Acc. epoch: 63.30% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:00 ]
+Epoch number: 39 out of 50
+	Train loss: 0.991 | Train Accuracy: 63.350%
+	CV loss:    1.126 | CV Accuracy:    55.762%
+	Time taken: 11.26 seconds
+[2025-03-27 23:24:00 ]
+EPOCH NUMBER: 40 out of 50
+[2025-03-27 23:24:00 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    1.247 (last:    1.247) | Train Acc. epoch: 50.00% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:04 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.993 (last:    0.770) | Train Acc. epoch: 61.46% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:08 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.993 (last:    1.116) | Train Acc. epoch: 62.35% (last: 50.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:11 ]
+Epoch number: 40 out of 50
+	Train loss: 0.992 | Train Accuracy: 62.350%
+	CV loss:    1.104 | CV Accuracy:    56.738%
+	Time taken: 11.30 seconds
+[2025-03-27 23:24:11 ]
+EPOCH NUMBER: 41 out of 50
+[2025-03-27 23:24:11 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.898 (last:    0.898) | Train Acc. epoch: 62.50% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:15 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.996 (last:    0.866) | Train Acc. epoch: 61.70% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:19 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.988 (last:    0.937) | Train Acc. epoch: 62.81% (last: 53.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:22 ]
+Epoch number: 41 out of 50
+	Train loss: 0.993 | Train Accuracy: 62.200%
+	CV loss:    1.099 | CV Accuracy:    57.910%
+	Time taken: 11.32 seconds
+[2025-03-27 23:24:23 ]
+EPOCH NUMBER: 42 out of 50
+[2025-03-27 23:24:23 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.840 (last:    0.840) | Train Acc. epoch: 71.88% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:27 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.964 (last:    1.120) | Train Acc. epoch: 64.03% (last: 43.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:30 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.962 (last:    0.922) | Train Acc. epoch: 64.08% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:34 ]
+Epoch number: 42 out of 50
+	Train loss: 0.958 | Train Accuracy: 64.975%
+	CV loss:    1.109 | CV Accuracy:    57.910%
+	Time taken: 11.28 seconds
+[2025-03-27 23:24:34 ]
+EPOCH NUMBER: 43 out of 50
+[2025-03-27 23:24:34 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.823 (last:    0.823) | Train Acc. epoch: 71.88% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:38 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.959 (last:    1.169) | Train Acc. epoch: 65.13% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:42 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.977 (last:    0.963) | Train Acc. epoch: 64.05% (last: 62.50%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:45 ]
+Epoch number: 43 out of 50
+	Train loss: 0.974 | Train Accuracy: 63.800%
+	CV loss:    1.133 | CV Accuracy:    55.371%
+	Time taken: 11.14 seconds
+[2025-03-27 23:24:45 ]
+EPOCH NUMBER: 44 out of 50
+[2025-03-27 23:24:46 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.765 (last:    0.765) | Train Acc. epoch: 59.38% (last: 59.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:49 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.913 (last:    0.728) | Train Acc. epoch: 65.26% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:53 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.939 (last:    0.948) | Train Acc. epoch: 64.42% (last: 65.62%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:24:57 ]
+Epoch number: 44 out of 50
+	Train loss: 0.940 | Train Accuracy: 64.900%
+	CV loss:    1.127 | CV Accuracy:    54.785%
+	Time taken: 11.34 seconds
+[2025-03-27 23:24:57 ]
+EPOCH NUMBER: 45 out of 50
+[2025-03-27 23:24:57 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.904 (last:    0.904) | Train Acc. epoch: 75.00% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:01 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.934 (last:    1.082) | Train Acc. epoch: 65.26% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:05 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.954 (last:    1.254) | Train Acc. epoch: 64.23% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:08 ]
+Epoch number: 45 out of 50
+	Train loss: 0.952 | Train Accuracy: 64.000%
+	CV loss:    1.107 | CV Accuracy:    57.520%
+	Time taken: 11.30 seconds
+[2025-03-27 23:25:08 ]
+EPOCH NUMBER: 46 out of 50
+[2025-03-27 23:25:09 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.677 (last:    0.677) | Train Acc. epoch: 71.88% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:12 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.929 (last:    0.781) | Train Acc. epoch: 66.18% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:16 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.927 (last:    0.791) | Train Acc. epoch: 65.04% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:20 ]
+Epoch number: 46 out of 50
+	Train loss: 0.923 | Train Accuracy: 65.375%
+	CV loss:    1.133 | CV Accuracy:    56.934%
+	Time taken: 11.36 seconds
+[2025-03-27 23:25:20 ]
+EPOCH NUMBER: 47 out of 50
+[2025-03-27 23:25:20 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.795 (last:    0.795) | Train Acc. epoch: 68.75% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:24 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.892 (last:    0.838) | Train Acc. epoch: 67.59% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:28 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.916 (last:    0.831) | Train Acc. epoch: 66.83% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:31 ]
+Epoch number: 47 out of 50
+	Train loss: 0.911 | Train Accuracy: 67.375%
+	CV loss:    1.135 | CV Accuracy:    55.176%
+	Time taken: 11.28 seconds
+[2025-03-27 23:25:31 ]
+EPOCH NUMBER: 48 out of 50
+[2025-03-27 23:25:31 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.701 (last:    0.701) | Train Acc. epoch: 78.12% (last: 78.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:35 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.896 (last:    0.774) | Train Acc. epoch: 67.59% (last: 75.00%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:39 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.895 (last:    0.674) | Train Acc. epoch: 67.54% (last: 78.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:43 ]
+Epoch number: 48 out of 50
+	Train loss: 0.906 | Train Accuracy: 67.025%
+	CV loss:    1.159 | CV Accuracy:    54.688%
+	Time taken: 11.56 seconds
+[2025-03-27 23:25:43 ]
+EPOCH NUMBER: 49 out of 50
+[2025-03-27 23:25:43 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.950 (last:    0.950) | Train Acc. epoch: 71.88% (last: 71.88%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:47 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.889 (last:    0.699) | Train Acc. epoch: 67.83% (last: 68.75%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:51 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.905 (last:    0.576) | Train Acc. epoch: 66.52% (last: 84.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:55 ]
+Epoch number: 49 out of 50
+	Train loss: 0.913 | Train Accuracy: 66.500%
+	CV loss:    1.206 | CV Accuracy:    52.148%
+	Time taken: 11.46 seconds
+[2025-03-27 23:25:55 ]
+EPOCH NUMBER: 50 out of 50
+[2025-03-27 23:25:55 ]
+Intermediate results for batch 000 out of 125: Train Loss epoch:    0.878 (last:    0.878) | Train Acc. epoch: 56.25% (last: 56.25%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:25:59 ]
+Intermediate results for batch 050 out of 125: Train Loss epoch:    0.886 (last:    0.773) | Train Acc. epoch: 69.18% (last: 84.38%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:26:03 ]
+Intermediate results for batch 100 out of 125: Train Loss epoch:    0.889 (last:    0.783) | Train Acc. epoch: 68.63% (last: 78.12%) | Elapsed Time: 0.0 sec.
+[2025-03-27 23:26:06 ]
+Epoch number: 50 out of 50
+	Train loss: 0.886 | Train Accuracy: 68.375%
+	CV loss:    1.182 | CV Accuracy:    53.320%
+	Time taken: 11.40 seconds
