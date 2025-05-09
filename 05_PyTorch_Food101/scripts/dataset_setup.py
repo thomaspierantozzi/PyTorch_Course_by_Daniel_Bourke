@@ -19,7 +19,7 @@ def download_Food101_dataset(path: pathlib.Path, logger: utilities.Logging_Agent
         logger.write_log(f'The Food101 dataset has been downloaded and is available @ {path}')
         shutil.copytree(path / 'food-101/images', path / 'images')
         shutil.rmtree(path / 'food-101')
-        os.remove(FOOD101_PATH / 'food-101.tar.gz')
+        os.remove(path / 'food-101.tar.gz')
     else:
         logger.write_log(f'The Food101 dataset already exists @ {path}')
     return None
