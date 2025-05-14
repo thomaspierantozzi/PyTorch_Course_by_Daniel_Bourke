@@ -4,8 +4,10 @@ from selenium.webdriver.common.by import By
 import base64
 import os
 
-FOOD = 'french_fries'
-URL = 'https://www.google.com/search?q=french+fries&client=safari&sca_esv=b657747ebb3c27f5&rls=en&udm=2&biw=1271&bih=840&sxsrf=AHTn8zoESYSCtq5vEP4O30btXOvhIXHwSQ%3A1743545298249&ei=0mPsZ5D9DomlhbIPrtv1uQU&oq=french&gs_lp=EgNpbWciBmZyZW5jaCoCCAAyDRAAGIAEGLEDGEMYigUyCBAAGIAEGLEDMggQABiABBixAzIIEAAYgAQYsQMyChAAGIAEGEMYigUyCBAAGIAEGLEDMgoQABiABBhDGIoFMggQABiABBixAzIKEAAYgAQYQxiKBTIIEAAYgAQYsQNI2xVQqwdY6A1wAXgAkAEAmAFLoAGbA6oBATa4AQPIAQD4AQGYAgegAtcDwgIGEAAYBxgewgIFEAAYgATCAgcQIxgnGMkCwgILEAAYgAQYsQMYgwGYAwCIBgGSBwE3oAecIbIHATa4B84D&sclient=img'
+FOOD = 'cup_cakes'
+URL = 'https://www.google.com/search?q=cup+cakes&client=safari&sca_esv=d57c1a3d738cc115&rls=en&channel=31&udm=2&biw=1452&bih=780&sxsrf=AHTn8zo0tyIlZHsPDmgazb4CnGlNcIlG6Q%3A1747227915083&ei=C5UkaIX0BPC-hbIPq_Sb4QU&ved=0ahUKEwjFpeGZg6ONAxVwX0EAHSv6JlwQ4dUDCBE&uact=5&oq=cup+cakes&gs_lp=EgNpbWciCWN1cCBjYWtlczIHECMYJxjJAjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCjIHEAAYgAQYCkj-C1AAWJEJcAB4AJABAJgBaKABugWqAQM4LjG4AQPIAQD4AQGYAgmgAvgFwgIKEAAYgAQYQxiKBcICEBAAGIAEGLEDGEMYgwEYigXCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIFEAAYgATCAgoQABiABBixAxgKwgINEAAYgAQYsQMYQxiKBZgDAJIHAzguMaAHozyyBwM4LjG4B_gF&sclient=img'
+
+print(os.getcwd())
 
 driver = webdriver.Safari()
 driver.get(URL)
@@ -15,16 +17,16 @@ print(len(list_images))
 print(list_images[0])
 print(list_images[0].split(',')[1].rstrip('/'))
 try:
-    os.mkdir(f'./{FOOD}')
+    os.mkdir(f'./final_test/{FOOD}')
 except FileExistsError:
     print('Directory already exists...')
 for index, pic in enumerate(list_images):
-    with open(f'./{FOOD}/{FOOD}{index:0>3}.jpeg', 'wb') as f:
+    with open(f'./final_test/{FOOD}/{FOOD}{index:0>3}.jpeg', 'wb') as f:
         f.write(base64.b64decode(pic.split(',')[1]))
 
-    size = os.path.getsize(f'./{FOOD}/{FOOD}{index:0>3}.jpeg')
+    size = os.path.getsize(f'./final_test/{FOOD}/{FOOD}{index:0>3}.jpeg')
     if size < 5_000:
-        os.remove(f'./{FOOD}/{FOOD}{index:0>3}.jpeg')
-print(len(os.listdir(f'./{FOOD}')))
+        os.remove(f'./final_test/{FOOD}/{FOOD}{index:0>3}.jpeg')
+print(len(os.listdir(f'./final_test/{FOOD}')))
 driver.quit()
 
