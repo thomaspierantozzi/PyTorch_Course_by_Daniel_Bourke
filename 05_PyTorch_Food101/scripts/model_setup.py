@@ -180,7 +180,8 @@ class Model_Blueprint(nn.Module, ABC):
             acc_batch_cv = self.accuracy(y_hat_cv, batch_test_y)
 
             if 'return_pred' in kwargs:
-                return loss_batch_cv.item(), acc_batch_cv, y_hat_cv
+                prediction = torch.argmax(nn.Softmax(y_hat_cv), dim=1)
+                return loss_batch_cv.item(), acc_batch_cv, prediction
 
             return loss_batch_cv.item(), acc_batch_cv
 
