@@ -149,7 +149,8 @@ class Model_Blueprint(nn.Module, ABC):
             batch_test_X: torch.Tensor,
             batch_test_y: torch.Tensor,
             loss_foo: torch.nn,
-            device: torch.device
+            device: torch.device,
+            **kwargs
     ):
         '''
         this function is used to evaluate the model on a batch of the dataset.
@@ -161,6 +162,8 @@ class Model_Blueprint(nn.Module, ABC):
         :param batch_test_y: target labels for the batch to evaluate the model on
         :param loss_foo: loss function to evaluate the model
         :param device: device where the model and the batches are located for the computation
+        :param kwargs:
+            * return_pred: whether to return the prediction
         :return: loss and accuracy for the batch defined in the arguments
         '''
 
@@ -175,6 +178,9 @@ class Model_Blueprint(nn.Module, ABC):
             # 2. loss_computation
             loss_batch_cv = loss_foo(y_hat_cv, batch_test_y)
             acc_batch_cv = self.accuracy(y_hat_cv, batch_test_y)
+
+            if 'return_pred' in kwargs:
+                return loss_batch_cv.item(), acc_batch_cv, y_hat_cv
 
             return loss_batch_cv.item(), acc_batch_cv
 

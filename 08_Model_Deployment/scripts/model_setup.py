@@ -328,6 +328,34 @@ class EffNetB0(Model_Blueprint):
         return x
         #return self.classifier(self.avgpool(self.features(x)))
 
+class EffNetB2(Model_Blueprint):
+    '''
+    This class is specifally made to import an EfficientNetB2 model as per PyTorch:
+    https://pytorch.org/vision/stable/models/generated/torchvision.models.efficientnet_b2.html#torchvision.models.EfficientNet_B2_Weights
+    '''
+
+    def __init__(self, name:str):
+        super().__init__(name=name)
+        self.define_architecture()
+
+    def define_architecture(self):
+        __weights = torchvision.models.EfficientNet_B2_Weights.DEFAULT
+        __pre_trained_model = torchvision.models.efficientnet_b2(weights=__weights)
+        self.layers = dict()
+        self.architecture = nn.ModuleList([])
+        for name, module in __pre_trained_model.named_modules():
+            self.__dict__[name] = module
+            self.architecture.append(module)
+        del __pre_trained_model, __weights
+
+    def forward(self, x):
+        x = self.features(x)
+        x = self.avgpool(x)
+        x = torch.flatten(x, 1)
+        x = self.classifier(x)
+        return x
+        #return self.classifier(self.avgpool(self.features(x)))
+
 class EffNetB3(Model_Blueprint):
     '''
     This class is specifally made to import an EfficientNetB0 model as per PyTorch:
