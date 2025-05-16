@@ -6,7 +6,7 @@ from torch import nn, Tensor
 from torch.utils.data import DataLoader
 from abc import ABC, abstractmethod
 from numpy import mean
-
+from PIL import Image
 
 class Model_Blueprint(nn.Module, ABC):
     '''
@@ -184,6 +184,44 @@ class Model_Blueprint(nn.Module, ABC):
                 return loss_batch_cv.item(), acc_batch_cv, prediction
 
             return loss_batch_cv.item(), acc_batch_cv
+
+    def predict(self,
+                input: Image | torch.Tensor,
+                transform_pipeline: torch.nn.Sequential,
+                test_mode: bool = False,
+                target_value: int | torch.Tensor | np.ndarray = None
+                ) -> dict:
+        '''
+        This function is used to make a prediction on a single image. The picture can be
+        :param input: image to be predicted. Either a single PIL.Image or a torch.Tensor is expected.
+        :param transform_pipeline: transforms to be applied to the image according to what used back at training time
+        :param test_mode: test mode 'True' means that the users wants to use the prediction to check whether the
+        prediction matches an expected target value. Default value 'False'
+        :param target_value: if in test_mode then the target_value is the single int value
+        (or torch.Tensor or np.ndarray) which holds the expected target value for the input
+        :return: dictionary containing the predicted class, prediction for the different classes,time spent for the
+        prediction
+        '''
+
+        assert type(input) == torch.Tensor or type(input) == Image, ('The picture should be either a single PIL.Image '
+                                                                     'or a torch.Tensor')
+
+        if type(input) == torch.Tensor: #if the input is a tensor then we need to process it accordingly
+            if input.dim == 3:
+                input.unsqueeze(0) #adding an extra dimension on a torch.Tensor which holds a single picture and has not a dim for the batch
+
+        start_time = time.time() #starting a timer to time the prediction pipeline
+        input = transform_pipeline(input)
+        pred_logits = self.forward(input)
+        pred_proba = nn.functional.softmax(pred_logits, dim=1)
+        pred_class = torch.argmax(pred_proba, dim=1)
+        end_time = time.time() #shutting off the timer
+        output_dict = {
+            'Predicted_class': pred_class,
+            'Prediction_proba': pred_proba,
+            'Predicton_time': end_time - start_time
+        }
+        return output_dict
 
     def write_epoch_results_class(self,
                                 curr_iteration:int,
