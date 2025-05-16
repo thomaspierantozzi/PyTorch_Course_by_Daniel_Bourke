@@ -186,8 +186,9 @@ class Model_Blueprint(nn.Module, ABC):
             return loss_batch_cv.item(), acc_batch_cv
 
     def predict(self,
-                input: Image | torch.Tensor,
+                input: Image.Image | Tensor,
                 transform_pipeline: torch.nn.Sequential,
+                device,
                 test_mode: bool = False,
                 target_value: int | torch.Tensor | np.ndarray = None
                 ) -> dict:
@@ -196,6 +197,7 @@ class Model_Blueprint(nn.Module, ABC):
         :param input: image to be predicted. Either a single PIL.Image or a torch.Tensor is expected.
         :param transform_pipeline: transforms to be applied to the image according to what used back at training time
         :param test_mode: test mode 'True' means that the users wants to use the prediction to check whether the
+        :param device: device where the model and the batches are located for the computation
         prediction matches an expected target value. Default value 'False'
         :param target_value: if in test_mode then the target_value is the single int value
         (or torch.Tensor or np.ndarray) which holds the expected target value for the input
@@ -203,24 +205,25 @@ class Model_Blueprint(nn.Module, ABC):
         prediction
         '''
 
-        assert type(input) == torch.Tensor or type(input) == Image, ('The picture should be either a single PIL.Image '
+        assert isinstance(input, torch.Tensor) or isinstance(input, Image.Image), ('The picture should be either a single PIL.Image '
                                                                      'or a torch.Tensor')
-
-        if type(input) == torch.Tensor: #if the input is a tensor then we need to process it accordingly
-            if input.dim == 3:
-                input.unsqueeze(0) #adding an extra dimension on a torch.Tensor which holds a single picture and has not a dim for the batch
 
         start_time = time.time() #starting a timer to time the prediction pipeline
         input = transform_pipeline(input)
+        input = input.to(device=device) #moves the preprocessed tensor to the expected device
+        if input.dim() < 4:
+            input = input.unsqueeze(0)
         pred_logits = self.forward(input)
         pred_proba = nn.functional.softmax(pred_logits, dim=1)
         pred_class = torch.argmax(pred_proba, dim=1)
         end_time = time.time() #shutting off the timer
         output_dict = {
-            'Predicted_class': pred_class,
-            'Prediction_proba': pred_proba,
-            'Predicton_time': end_time - start_time
+            'Predicted_class': pred_class.detach().to(device='cpu').numpy(),
+            'Prediction_proba': pred_proba.detach().to(device='cpu').numpy(),
+            'Prediction_time': end_time - start_time
         }
+        if test_mode:
+            output_dict['Expected_Class'] = target_value
         return output_dict
 
     def write_epoch_results_class(self,
@@ -478,8 +481,8 @@ class ViT_B_16(Model_Blueprint):
 
 
 if __name__ == '__main__':
-    import torchinfo
-    test = ViT_B_16('ViT_B_16')
-    tensor = torch.rand(32, 3, 224, 224)
-    for name, module in test.named_children():
-        print(name, module)
+    from PIL import Image
+    image = Image.open(
+    fp='/Users/thomaspierantozzi/PycharmProjects/PyTorch_Train/08_Model_Deployment/Datasets/final_test/cup_cakes/cup_cakes005.jpg'
+    )
+    vit_model = ViT_B_16('ViT-B_16')
