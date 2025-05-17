@@ -207,16 +207,17 @@ class Model_Blueprint(nn.Module, ABC):
 
         assert isinstance(input, torch.Tensor) or isinstance(input, Image.Image), ('The picture should be either a single PIL.Image '
                                                                      'or a torch.Tensor')
-
-        start_time = time.time() #starting a timer to time the prediction pipeline
-        input = transform_pipeline(input)
-        input = input.to(device=device) #moves the preprocessed tensor to the expected device
-        if input.dim() < 4:
-            input = input.unsqueeze(0)
-        pred_logits = self.forward(input)
-        pred_proba = nn.functional.softmax(pred_logits, dim=1)
-        pred_class = torch.argmax(pred_proba, dim=1)
-        end_time = time.time() #shutting off the timer
+        self.eval()
+        with torch.no_grad():
+            start_time = time.time() #starting a timer to time the prediction pipeline
+            input = transform_pipeline(input)
+            input = input.to(device=device) #moves the preprocessed tensor to the expected device
+            if input.dim() < 4:
+                input = input.unsqueeze(0)
+            pred_logits = self.forward(input)
+            pred_proba = nn.functional.softmax(pred_logits, dim=1)
+            pred_class = torch.argmax(pred_proba, dim=1)
+            end_time = time.time() #shutting off the timer
         output_dict = {
             'Predicted_class': pred_class.detach().to(device='cpu').numpy(),
             'Prediction_proba': pred_proba.detach().to(device='cpu').numpy(),
