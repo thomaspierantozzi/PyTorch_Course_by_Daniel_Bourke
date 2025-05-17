@@ -185,19 +185,21 @@ class Model_Blueprint(nn.Module, ABC):
 
             return loss_batch_cv.item(), acc_batch_cv
 
-    def predict(self,
-                input: Image.Image | Tensor,
-                transform_pipeline: torch.nn.Sequential,
-                device,
-                test_mode: bool = False,
-                target_value: int | torch.Tensor | np.ndarray = None
-                ) -> dict:
+    def predict_single(self,
+                       input: Image.Image | Tensor,
+                       transform_pipeline: torch.nn.Sequential,
+                       device: torch.device,
+                       classes: list = None,
+                       test_mode: bool = False,
+                       target_value: int | torch.Tensor | np.ndarray = None,
+                       ) -> dict:
         '''
         This function is used to make a prediction on a single image. The picture can be
         :param input: image to be predicted. Either a single PIL.Image or a torch.Tensor is expected.
         :param transform_pipeline: transforms to be applied to the image according to what used back at training time
-        :param test_mode: test mode 'True' means that the users wants to use the prediction to check whether the
         :param device: device where the model and the batches are located for the computation
+        :param classes: list of classes to be predicted
+        :param test_mode: test mode 'True' means that the users wants to use the prediction to check whether the
         prediction matches an expected target value. Default value 'False'
         :param target_value: if in test_mode then the target_value is the single int value
         (or torch.Tensor or np.ndarray) which holds the expected target value for the input
@@ -218,9 +220,10 @@ class Model_Blueprint(nn.Module, ABC):
             pred_proba = nn.functional.softmax(pred_logits, dim=1)
             pred_class = torch.argmax(pred_proba, dim=1)
             end_time = time.time() #shutting off the timer
+        probabilities_per_class = {classes[idx]: pred_proba[0, idx].item() for idx, _ in enumerate(classes)}
         output_dict = {
-            'Predicted_class': pred_class.detach().to(device='cpu').numpy(),
-            'Prediction_proba': pred_proba.detach().to(device='cpu').numpy(),
+            'Predicted_class': pred_class.detach().to(device='cpu').item(),
+            'Prediction_proba': probabilities_per_class,
             'Prediction_time': end_time - start_time
         }
         if test_mode:
@@ -283,6 +286,33 @@ class Model_Blueprint(nn.Module, ABC):
                 f'Train Loss epoch: {np.mean(train_loss):>8.3f} (last: {batch_loss_train:>8.3f}) | '
                 f'Train Acc. epoch: {np.mean(train_acc):>6.2%} (last: {batch_acc_train:>6.2%}) | '
                 f'Elapsed Time: {end_time_iteration - start_time_iteration:.1f} sec.')
+
+    @property
+    def model_transform(self):
+        return self._model_transform
+
+    @model_transform.setter
+    def model_transform(self, transform: nn.Sequential | torchvision.transforms.Compose) -> None:
+        '''
+        this setter sets the transformation pipeline to preprocess a picture and get it ready for inference.
+        :param transform: the preprocessing pipeline. Since this is going to be used for the inference as well, it's
+        better to keep out any image augmentation pipeline out of this parameters
+        :return: None
+        '''
+        self._model_transform = transform
+
+    @property
+    def classes_map(self) -> dict:
+        return self._classes_map
+
+    @classes_map.setter
+    def classes_map(self, classes_map: dict) -> None:
+        '''
+        This setter sets dict which maps the classificiation classes labels to the index used at training time
+        :param classes_map: a dict holding the mapping of classification classes
+        :return: None
+        '''
+        self._classes_map = classes_map
 
 class TinyVGG(Model_Blueprint):
     '''
