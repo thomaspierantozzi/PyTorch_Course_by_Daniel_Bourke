@@ -187,18 +187,14 @@ class Model_Blueprint(nn.Module, ABC):
 
     def predict_single(self,
                        input: Image.Image | Tensor,
-                       transform_pipeline: torch.nn.Sequential,
-                       device: torch.device,
-                       classes: list = None,
                        test_mode: bool = False,
                        target_value: int | torch.Tensor | np.ndarray = None,
                        ) -> dict:
         '''
-        This function is used to make a prediction on a single image. The picture can be
+        This function is used to make a prediction on a SINGLE IMAGE (either a torch.Tensor or PIL.Image.Image).
+        This function runs on the cpu: for this model the goal is to run (hypothetically) on all the devices or on
+        browser apps, where a gpu generally is not available
         :param input: image to be predicted. Either a single PIL.Image or a torch.Tensor is expected.
-        :param transform_pipeline: transforms to be applied to the image according to what used back at training time
-        :param device: device where the model and the batches are located for the computation
-        :param classes: list of classes to be predicted
         :param test_mode: test mode 'True' means that the users wants to use the prediction to check whether the
         prediction matches an expected target value. Default value 'False'
         :param target_value: if in test_mode then the target_value is the single int value
@@ -209,18 +205,30 @@ class Model_Blueprint(nn.Module, ABC):
 
         assert isinstance(input, torch.Tensor) or isinstance(input, Image.Image), ('The picture should be either a single PIL.Image '
                                                                      'or a torch.Tensor')
+
+        #setting the device since we do not need to leverage the cpu: for this model the goal is to run (hypothetically)
+        #on all the devices or on browser apps, where a gpu generally is not available
+        device = 'cpu'
+        self.to(device=device)
+        if type(input) == torch.Tensor:
+            input.to(device=device)
+
         self.eval()
         with torch.no_grad():
             start_time = time.time() #starting a timer to time the prediction pipeline
-            input = transform_pipeline(input)
-            input = input.to(device=device) #moves the preprocessed tensor to the expected device
+            try:
+                input = self.model_transform(input)
+            except AttributeError as e:
+                print(f'The model needs to know which transformation pipeline has been used to pre-process the pictures.\n'
+                      f'Please leverage the self.model_transform property...')
+
             if input.dim() < 4:
                 input = input.unsqueeze(0)
             pred_logits = self.forward(input)
             pred_proba = nn.functional.softmax(pred_logits, dim=1)
             pred_class = torch.argmax(pred_proba, dim=1)
             end_time = time.time() #shutting off the timer
-        probabilities_per_class = {classes[idx]: pred_proba[0, idx].item() for idx, _ in enumerate(classes)}
+        probabilities_per_class = {self.classes_map[idx]: pred_proba[0, self.classes_map[idx]].item() for idx in (self.classes_map.keys())}
         output_dict = {
             'Predicted_class': pred_class.detach().to(device='cpu').item(),
             'Prediction_proba': probabilities_per_class,
