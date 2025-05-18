@@ -67,6 +67,7 @@ For a real deployment that should be taken in consideration
 
 ![Accuracy vs. InferenceTime per single image](https://github.com/thomaspierantozzi/PyTorch_Course_by_Daniel_Bourke/raw/main/08_Model_Deployment/Accuracy_vs_inference_time.png "Accuracy vs. InferenceTime")
 
+The final model is up and running @ the following [HuggingFace link](https://huggingface.co/spaces/thomas-pierantozzi89/FoodClassifier_Nano/blob/main/app.py)
 
 ## Next steps...
 For sure this course gave me a lot, but it's obviously a starting point for something completely new. 
