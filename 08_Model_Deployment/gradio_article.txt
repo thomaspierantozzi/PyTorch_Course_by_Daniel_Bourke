@@ -1,0 +1,11 @@
+### Food Classifier with Visual Transformer
+
+This classifier is the milestone project for the course 'PyTorch for deep neural networks bootcamp' by mr. Daniel Bourke.
+After having weighted the performance of two different models:
+* EffNet_B2 (<a href='https://docs.pytorch.org/vision/main/models/generated/torchvision.models.efficientnet_b2.html'>PyTorch doc link here</a>)
+* ViT_b_16 (<a href='https://docs.pytorch.org/vision/main/models/generated/torchvision.models.vit_b_16.html#torchvision.models.vit_b_16'>PyTorch doc link here</a>)
+
+It has been decided to work with the ViT transformer as its size (300Mb of memory compared to the 28Mb of the EffNet_B2) are overpowering the accuracy of the other model, without brining in a huge amount of time to compute the prediction
+Here under a brief description of the preiction-time vs. performance of the models.
+
+<img src='https://github.com/thomaspierantozzi/PyTorch_Course_by_Daniel_Bourke/raw/main/08_Model_Deployment/Accuracy_vs_inference_time.png'>
