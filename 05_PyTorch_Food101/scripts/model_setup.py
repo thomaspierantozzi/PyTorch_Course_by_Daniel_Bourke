@@ -228,7 +228,7 @@ class Model_Blueprint(nn.Module, ABC):
             pred_proba = nn.functional.softmax(pred_logits, dim=1)
             pred_class = torch.argmax(pred_proba, dim=1)
             end_time = time.time() #shutting off the timer
-        probabilities_per_class = {self.classes_map[idx]: pred_proba[0, self.classes_map[idx]].item() for idx in (self.classes_map.keys())}
+        probabilities_per_class = {idx: pred_proba[0, self.classes_map[idx]].item() for idx in (self.classes_map.keys())}
         output_dict = {
             'Predicted_class': pred_class.detach().to(device='cpu').item(),
             'Prediction_proba': probabilities_per_class,
