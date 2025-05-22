@@ -400,6 +400,7 @@ class EffNetB0(Model_Blueprint):
     def define_architecture(self):
         __weights = torchvision.models.EfficientNet_B0_Weights.DEFAULT
         __pre_trained_model = torchvision.models.efficientnet_b0(weights=__weights)
+        self.transformers = __weights.transforms
         self.layers = dict()
         self.architecture = nn.ModuleList([])
         for name, module in __pre_trained_model.named_modules():
@@ -428,6 +429,7 @@ class EffNetB2(Model_Blueprint):
     def define_architecture(self):
         __weights = torchvision.models.EfficientNet_B2_Weights.DEFAULT
         __pre_trained_model = torchvision.models.efficientnet_b2(weights=__weights)
+        self.transformers = __weights.transforms
         self.layers = dict()
         self.architecture = nn.ModuleList([])
         for name, module in __pre_trained_model.named_modules():
@@ -456,6 +458,7 @@ class EffNetB3(Model_Blueprint):
     def define_architecture(self):
         __weights = torchvision.models.EfficientNet_B3_Weights.DEFAULT
         __pre_trained_model = torchvision.models.efficientnet_b3(weights=__weights)
+        self.transformers = __weights.transforms
         self.layers = dict()
         self.architecture = nn.ModuleList([])
         for name, module in __pre_trained_model.named_modules():
@@ -484,6 +487,7 @@ class EffNetB4(Model_Blueprint):
     def define_architecture(self):
         __weights = torchvision.models.EfficientNet_B4_Weights.DEFAULT
         __pre_trained_model = torchvision.models.efficientnet_b4(weights=__weights)
+        self.transformers = __weights.transforms
         self.layers = dict()
         self.architecture = nn.ModuleList([])
         for name, module in __pre_trained_model.named_modules():
