@@ -13,6 +13,7 @@ from PIL import Image
 from torch import nn
 import pickle
 import torch
+import pathlib
 
 def send_telegram(message: str):
     '''
@@ -190,3 +191,27 @@ def save_model(path: pathlib.Path,
     }, model_checkpoint)
 
     return None
+
+def create_train_cv_from_folder(train_cv_perc: float,
+                                root: str | pathlib.Path,
+                                train_folder: str | pathlib.Path,
+                                cv_folder: str | pathlib.Path):
+
+    for path, dirname, filename in os.walk(root):
+    train_indexes = []  #let's initialize an empty list of indexes for the train path of the current species.
+    tmp_path = pathlib.Path(path)
+    print('Working on ' + str(tmp_path.name), end=' | ')
+    print('Moving', len(filename), 'pictures')
+    train_indexes = random.sample(range(len(filename)), int(TRAIN_SPLIT_PERC * len(filename)))  #let's sample 'TRAIN_SPLIT_PERC' pictures, and move them to the train folder. the rest goes in the cv folder
+
+    for index_file, file in enumerate(filename):
+        tmp_filepath = pathlib.Path(tmp_path / file)
+
+        if index_file in train_indexes:  #the sampled indexes go to train
+            (train_folder / tmp_path.name).mkdir(exist_ok=True)
+            tmp_filepath.rename(
+                train_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
+        else:  #the indexes not samples go to cv folder
+            (cv_folder / tmp_path.name).mkdir(exist_ok=True)
+            tmp_filepath.rename(
+                cv_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
