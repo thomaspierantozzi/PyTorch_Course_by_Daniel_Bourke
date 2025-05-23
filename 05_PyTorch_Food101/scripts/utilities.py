@@ -197,22 +197,33 @@ def create_train_cv_from_folder(train_cv_perc: float,
                                 root: str | pathlib.Path,
                                 train_folder: str | pathlib.Path,
                                 cv_folder: str | pathlib.Path):
+    '''
+    This function serves the user splitting a folder already shaped in the fashion of DatasetFolder from torchvision 
+    (here the link: https://docs.pytorch.org/vision/main/generated/torchvision.datasets.DatasetFolder.html).
+    The result will be a new folder containing two subfolders: train and cv, each containing all the classes split in 
+    folder. The train will get 'train_cv_perc' * len(samples for that class) samples
+    :param train_cv_perc: a float number giving the percentage of the train_cv split
+    :param root: the folder from which getting the data and the structure
+    :param train_folder: accepting both string or pathlib.Path obj. That's the final train folder
+    :param cv_folder: accepting both string or pathlib.Path obj. That's the final cv folder
+    :return: None
+    '''
 
     for path, dirname, filename in os.walk(root):
-    train_indexes = []  #let's initialize an empty list of indexes for the train path of the current species.
-    tmp_path = pathlib.Path(path)
-    print('Working on ' + str(tmp_path.name), end=' | ')
-    print('Moving', len(filename), 'pictures')
-    train_indexes = random.sample(range(len(filename)), int(train_cv_perc * len(filename)))  #let's sample 'TRAIN_SPLIT_PERC' pictures, and move them to the train folder. the rest goes in the cv folder
+        train_indexes = []  #let's initialize an empty list of indexes for the train path of the current species.
+        tmp_path = pathlib.Path(path)
+        print('Working on ' + str(tmp_path.name), end=' | ')
+        print('Moving', len(filename), 'pictures')
+        train_indexes = random.sample(range(len(filename)), int(train_cv_perc * len(filename)))  #let's sample 'TRAIN_SPLIT_PERC' pictures, and move them to the train folder. the rest goes in the cv folder
 
-    for index_file, file in enumerate(filename):
-        tmp_filepath = pathlib.Path(tmp_path / file)
+        for index_file, file in enumerate(filename):
+            tmp_filepath = pathlib.Path(tmp_path / file)
 
-        if index_file in train_indexes:  #the sampled indexes go to train
-            (train_folder / tmp_path.name).mkdir(exist_ok=True)
-            tmp_filepath.rename(
-                train_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
-        else:  #the indexes not samples go to cv folder
-            (cv_folder / tmp_path.name).mkdir(exist_ok=True)
-            tmp_filepath.rename(
-                cv_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
+            if index_file in train_indexes:  #the sampled indexes go to train
+                (train_folder / tmp_path.name).mkdir(exist_ok=True)
+                tmp_filepath.rename(
+                    train_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
+            else:  #the indexes not samples go to cv folder
+                (cv_folder / tmp_path.name).mkdir(exist_ok=True)
+                tmp_filepath.rename(
+                    cv_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')}')
