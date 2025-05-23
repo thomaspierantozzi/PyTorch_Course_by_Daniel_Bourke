@@ -14,6 +14,7 @@ from torch import nn
 import pickle
 import torch
 import pathlib
+import random
 
 def send_telegram(message: str):
     '''
@@ -202,7 +203,7 @@ def create_train_cv_from_folder(train_cv_perc: float,
     tmp_path = pathlib.Path(path)
     print('Working on ' + str(tmp_path.name), end=' | ')
     print('Moving', len(filename), 'pictures')
-    train_indexes = random.sample(range(len(filename)), int(TRAIN_SPLIT_PERC * len(filename)))  #let's sample 'TRAIN_SPLIT_PERC' pictures, and move them to the train folder. the rest goes in the cv folder
+    train_indexes = random.sample(range(len(filename)), int(train_cv_perc * len(filename)))  #let's sample 'TRAIN_SPLIT_PERC' pictures, and move them to the train folder. the rest goes in the cv folder
 
     for index_file, file in enumerate(filename):
         tmp_filepath = pathlib.Path(tmp_path / file)
