@@ -226,4 +226,4 @@ def create_train_cv_from_folder(train_cv_perc: float,
             else:  #the indexes not samples go to cv folder
                 (cv_folder / tmp_path.name).mkdir(exist_ok=True)
                 tmp_filepath.rename(
-                    cv_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')}')
+                    cv_folder / tmp_path.name / f'{index_file:0>3}_{tmp_path.name}{tmp_filepath.suffix}')
