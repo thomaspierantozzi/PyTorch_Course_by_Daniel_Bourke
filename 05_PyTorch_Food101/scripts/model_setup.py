@@ -511,8 +511,8 @@ class ViT_B_16(Model_Blueprint):
 
     def __init__(self, name:str, SWAG_weights: bool = False):
         super().__init__(name=name)
-        self.define_architecture()
         self.weights = SWAG_weights
+        self.define_architecture()
 
     def define_architecture(self):
         if self.weights == False:
