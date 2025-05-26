@@ -509,12 +509,16 @@ class ViT_B_16(Model_Blueprint):
     https://docs.pytorch.org/vision/main/models/generated/torchvision.models.vit_b_16.html#torchvision.models.ViT_B_16_Weights
     '''
 
-    def __init__(self, name:str):
+    def __init__(self, name:str, SWAG_weights: bool = False):
         super().__init__(name=name)
         self.define_architecture()
+        self.weights = SWAG_weights
 
     def define_architecture(self):
-        __weights = torchvision.models.ViT_B_16_Weights.DEFAULT
+        if self.weights == False:
+            __weights = torchvision.models.ViT_B_16_Weights.DEFAULT
+        else:
+            __weights = torchvision.models.IMAGENET1K_SWAG_E2E_V1
         self.pre_trained_model = torchvision.models.vit_b_16(weights=__weights, progress=True)
         self.architecture = nn.ModuleList([])
         self.transformers = __weights.transforms
