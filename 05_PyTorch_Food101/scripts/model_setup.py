@@ -518,7 +518,7 @@ class ViT_B_16(Model_Blueprint):
         if self.weights == False:
             __weights = torchvision.models.ViT_B_16_Weights.DEFAULT
         else:
-            __weights = torchvision.models.IMAGENET1K_SWAG_E2E_V1
+            __weights = torchvision.models.ViT_B_16_Weights.IMAGENET1K_SWAG_E2E_V1
         self.pre_trained_model = torchvision.models.vit_b_16(weights=__weights, progress=True)
         self.architecture = nn.ModuleList([])
         self.transformers = __weights.transforms
